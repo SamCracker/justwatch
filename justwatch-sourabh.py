@@ -24,10 +24,7 @@ class MovieInfo(scrapy.Spider):
         
         release_year = response.xpath("//div[@class='title-block']//div//span/text()").extract()
         logger.info("Release Year:: {}".format(release_year))
-        
-        # language = response.xpath().extract()
-        # logger.info("Language:: {}".format(language))
-        
+         
         duration = set(response.xpath("//div[@class='detail-infos__value']/text()").extract())
         logger.info("Duration:: {}".format(duration))
         
