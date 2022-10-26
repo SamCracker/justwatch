@@ -10,6 +10,9 @@ class MovieInfo(scrapy.Spider):
 
     def parse(self, response):
         '''Parsing function to fetch required info'''
+        movie_uri = "https://www.justwatch.com/ag/movie/k-g-f-chapter-1"
+        logger.info("MOVIE URI:: {}".format(movie_uri))
+        
         movie_name = response.xpath("//div[@class='title-block']//div//h1/text()").extract()
         logger.info("Movie Name:: {}".format(movie_name))
         
